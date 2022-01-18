@@ -1,23 +1,23 @@
 <ion-header>
   <ion-toolbar>
   <ion-title>
- Ann's ToDo App
+ Today
   </ion-title>
   </ion-toolbar>
   </ion-header>
   <ion-content padding>
-<ion-button> Open Modal</ion-button>
+
+<ion-button data-modal-target="#modal"> Open Modal</ion-button>
 <div class="modal" id="modal">
   <div class="modal-header">
     <div class="title">Modal Title</div>
-    <ion-button class="close-button">&times;</ion-button>
+    <ion-button data-close-button class="close-button">&times;</ion-button>
   </div>
   <div class="modal-body">
     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati rem magnam mollitia ad, et necessitatibus aut laudantium eum quia est! Commodi consequuntur iusto tempore impedit aliquid, voluptas beatae? Qui dolorem enim veritatis perspiciatis assumenda officiis ratione quibusdam praesentium totam obcaecati. Debitis fugit tempore alias inventore eius assumenda explicabo at non!
   </div>
 </div>
 <div id="overlay"></div>
-    
   <!-- <ion-item>
   <ion-input type="text" placeholder="Enter task"
   [(ngModel)]="taskName"></ion-input>
@@ -30,20 +30,39 @@
   <div padding >
   <ion-list>
   <ion-item *ngFor="let todo of taskList; let i = index">
-  <div class="item-note" slot="start">
+    
+  
+  {{todo}}
+  </ion-item>
+  </ion-list>
+  </div> -->
+  
+  </ion-content>
+  
+<!-- delete button -->
+  <!-- <div class="item-note" slot="end">
+    <ion-button color="danger" clear (click)="deleteTask(i)">
+    <ion-icon name="close-outline"></ion-icon>
+    </ion-button>
+    </div> -->
+
+
+    <!-- modal -->
+    <!-- <ion-button> Open Modal</ion-button>
+<div class="modal" id="modal">
+  <div class="modal-header">
+    <div class="title">Modal Title</div>
+    <ion-button class="close-button">&times;</ion-button>
+  </div>
+  <div class="modal-body">
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati rem magnam mollitia ad, et necessitatibus aut laudantium eum quia est! Commodi consequuntur iusto tempore impedit aliquid, voluptas beatae? Qui dolorem enim veritatis perspiciatis assumenda officiis ratione quibusdam praesentium totam obcaecati. Debitis fugit tempore alias inventore eius assumenda explicabo at non!
+  </div>
+</div>
+<div id="overlay"></div> -->
+
+  <!-- add button -->
+<!-- <div class="item-note" slot="start">
   <ion-button color="success" clear (click)="markTaskCompleted(i)">
   <ion-icon name="checkmark-outline"></ion-icon>
   </ion-button>
-  </div>
-  {{todo}}
-  <div class="item-note" slot="end">
-  <ion-button color="danger" clear (click)="deleteTask(i)">
-  <ion-icon name="close-outline"></ion-icon>
-  </ion-button>
-  </div>
-  </ion-item>
-  </ion-list>
-  </div>
-   -->
-  </ion-content>
-  
+  </div> -->
