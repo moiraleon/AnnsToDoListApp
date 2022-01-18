@@ -1,20 +1,49 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+  <ion-title>
+ Ann's ToDo App
+  </ion-title>
   </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
   </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <ion-content padding>
+<ion-button> Open Modal</ion-button>
+<div class="modal" id="modal">
+  <div class="modal-header">
+    <div class="title">Modal Title</div>
+    <ion-button class="close-button">&times;</ion-button>
   </div>
-</ion-content>
+  <div class="modal-body">
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati rem magnam mollitia ad, et necessitatibus aut laudantium eum quia est! Commodi consequuntur iusto tempore impedit aliquid, voluptas beatae? Qui dolorem enim veritatis perspiciatis assumenda officiis ratione quibusdam praesentium totam obcaecati. Debitis fugit tempore alias inventore eius assumenda explicabo at non!
+  </div>
+</div>
+<div id="overlay"></div>
+    
+  <!-- <ion-item>
+  <ion-input type="text" placeholder="Enter task"
+  [(ngModel)]="taskName"></ion-input>
+  <div class="item-note" item-end >
+  <ion-button color="primary" (click)="addTask()">
+  <ion-icon name="add"></ion-icon>
+  </ion-button>
+  </div>
+  </ion-item>
+  <div padding >
+  <ion-list>
+  <ion-item *ngFor="let todo of taskList; let i = index">
+  <div class="item-note" slot="start">
+  <ion-button color="success" clear (click)="markTaskCompleted(i)">
+  <ion-icon name="checkmark-outline"></ion-icon>
+  </ion-button>
+  </div>
+  {{todo}}
+  <div class="item-note" slot="end">
+  <ion-button color="danger" clear (click)="deleteTask(i)">
+  <ion-icon name="close-outline"></ion-icon>
+  </ion-button>
+  </div>
+  </ion-item>
+  </ion-list>
+  </div>
+   -->
+  </ion-content>
+  

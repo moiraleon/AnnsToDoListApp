@@ -25,3 +25,79 @@
 #container a {
   text-decoration: none;
 }
+
+*, *::after, *::before{
+  box-sizing: border-box;
+}
+
+.modal{
+  position: fixed;
+  //centering
+  top: 50%;
+  left: 50%;
+  //hide by default
+  transform: translate(-50%,-50%) scale(0);
+  transition: 200ms ease-in-out;
+  //styling pop up
+  border: 1px solid rgb(164, 55, 55); //red for testing in dark mode
+  border-radius: 10px;
+  //creating the overlay in the z axis
+  z-index: 10;
+  background-color: rgb(211, 176, 176);//reset to be compatible with llgith and dark mode\
+  //making text responsive to width
+  width: 500px;
+  max-width: 80%;
+}
+
+.modal.active{
+   //appears when active
+   transform: translate(-50%,-50%) scale(1);
+}
+
+.modal-header{
+  padding-left: 10px;
+  padding: 10px, 15px;
+  display: flex;//making items line up side by side
+  justify-content: space-between; //spacing out items
+  align-items: center;
+  border-bottom: 1px solid black;
+}
+
+.modal-header .title{
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+//adjust styling for ionic buttons
+.modal-header .close-button{
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.modal-body{
+  padding-left: 10px;
+  padding: 10px, 15px;
+}
+
+//styling for background
+#overlay{
+position: fixed;
+opacity: 0;
+transition: 200ms ease-in-out;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+// background-color: rgba(0,0,0,.5);
+background-color: rgba(122, 67, 67, 0.5);
+pointer-events: none;
+}
+
+#overlay{
+  opacity: 1;
+  pointer-events: all;
+}
