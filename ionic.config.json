@@ -1,0 +1,7 @@
+{
+  "name": "AnnesToDo",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
