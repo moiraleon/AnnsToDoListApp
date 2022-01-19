@@ -7,18 +7,9 @@
   </ion-header>
   <ion-content padding>
 
-<ion-button data-modal-target="#modal"> Open Modal</ion-button>
-<div class="modal" id="modal">
-  <div class="modal-header">
-    <div class="title">Modal Title</div>
-    <ion-button data-close-button class="close-button">&times;</ion-button>
-  </div>
-  <div class="modal-body">
-    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati rem magnam mollitia ad, et necessitatibus aut laudantium eum quia est! Commodi consequuntur iusto tempore impedit aliquid, voluptas beatae? Qui dolorem enim veritatis perspiciatis assumenda officiis ratione quibusdam praesentium totam obcaecati. Debitis fugit tempore alias inventore eius assumenda explicabo at non!
-  </div>
-</div>
-<div id="overlay"></div>
-  <!-- <ion-item>
+    <ion-button expand="block">Show Action Sheet</ion-button>
+    
+    <!-- <ion-item>
   <ion-input type="text" placeholder="Enter task"
   [(ngModel)]="taskName"></ion-input>
   <div class="item-note" item-end >
@@ -35,9 +26,29 @@
   {{todo}}
   </ion-item>
   </ion-list>
-  </div> -->
-  
+  </div> 
+   -->
   </ion-content>
+
+<!-- task list -->
+    <!-- <ion-item>
+  <ion-input type="text" placeholder="Enter task"
+  [(ngModel)]="taskName"></ion-input>
+  <div class="item-note" item-end >
+  <ion-button color="primary" (click)="addTask()">
+  <ion-icon name="add"></ion-icon>
+  </ion-button>
+  </div>
+  </ion-item>
+  <div padding >
+  <ion-list>
+  <ion-item *ngFor="let todo of taskList; let i = index">
+    
+  
+  {{todo}}
+  </ion-item>
+  </ion-list>
+  </div>  -->
   
 <!-- delete button -->
   <!-- <div class="item-note" slot="end">

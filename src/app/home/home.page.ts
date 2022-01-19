@@ -1,8 +1,5 @@
 import { Component } from '@angular/core';
-const openModalButtons = document.querySelectorAll('[data-modal-target]')
-const closeModalButtons = document.querySelectorAll('[data-close-button]')
-const overlay = document.getElementById('overlay')
-
+import { ActionSheetController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -10,50 +7,76 @@ const overlay = document.getElementById('overlay')
   styleUrls: ['home.page.scss'],
 })
 
-openModalButtons.forEach(button =>{
-  button.addEventListener('click', () =>{
-    const modal = document.querySelector(button.dataset.modalTarget)
-    openModal(modal)
-  })
-})    
-
-closeModalButtons.forEach(button =>{
-  button.addEventListener('click', () =>{
-    const modal = button.closest
-    closeModal(modal)
-  })
-})    
-
 export class HomePage {
  
   taskName: any = ''; // Entered Text
   taskList = []; // Array to store tasks
-  completedTasks = []; //array to store completed tasks
+  // completedTasks = []; //array to store completed tasks
   
    
-  constructor() {}
+  constructor(public actionSheetController: ActionSheetController) {}
 
-  
-  addTask() {
-  if (this.taskName.length > 0) {
-  let task = this.taskName;
-  this.taskList.push(task);
-  console.log(task);//for testing
-  this.taskName = '';
+
+  async presentActionSheet() {
+    const actionSheet = await this.actionSheetController.create({
+      header: 'Albums',
+      cssClass: 'my-custom-class',
+      buttons: [{
+        text: 'Delete',
+        role: 'destructive',
+        icon: 'trash',
+        id: 'delete-button',
+        data: {
+          type: 'delete'
+        },
+        handler: () => {
+          console.log('Delete clicked');
+        }
+      }, {
+        text: 'Share',
+        icon: 'share',
+        data: 10,
+        handler: () => {
+          console.log('Share clicked');
+        }
+      }, {
+        text: 'Play (open modal)',
+        icon: 'caret-forward-circle',
+        data: 'Data value',
+        handler: () => {
+          console.log('Play clicked');
+        }
+      }, {
+        text: 'Favorite',
+        icon: 'heart',
+        handler: () => {
+          console.log('Favorite clicked');
+        }
+      }, {
+        text: 'Cancel',
+        icon: 'close',
+        role: 'cancel',
+        handler: () => {
+          console.log('Cancel clicked');
+        }
+      }]
+    });
+    await actionSheet.present();
+
+    const { role, data } = await actionSheet.onDidDismiss();
+    console.log('onDidDismiss resolved with role and data', role, data);
   }
-  }
+
+  // addTask() {
+  // if (this.taskName.length > 0) {
+  // let task = this.taskName;
+  // this.taskList.push(task);
+  // console.log(task);//for testing
+  // this.taskName = '';
+  // }
+  // }
  
-   openModal(modal) {
-    if (modal == null) return 
-     modal.classList.add('active')
-    overlay.classList.add('active') 
-   }
 
-   closeModal(modal) { 
-    if (modal == null) return
-    modal.classList.remove('active')
-    overlay.classList.remove('active') 
-    }
     
 
 
